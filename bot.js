@@ -9,25 +9,25 @@ var T = new Twit(config);
 
 
 // Get Tweets/Search from Twitter
-function getTweet() {
-    var params = {
-        q: '@MyCipherBot : since:2020-08-01',
-        count: 10
-    }
+// function getTweet() {
+//     var params = {
+//         q: '@MyCipherBot : since:2020-08-01',
+//         count: 10
+//     }
 
-    function getData(err, data, response) {
-        if (err) {
-            console.log('getData() - Cannot fetch details, something went Wrong!')
-        } else {
-            var tweets = data.statuses;
-            for (var i = 0; i < tweets.length; i++) {
-                console.log(tweets[i].text);
-            }
-        }
-    }
+//     function getData(err, data, response) {
+//         if (err) {
+//             console.log('getData() - Cannot fetch details, something went Wrong!')
+//         } else {
+//             var tweets = data.statuses;
+//             for (var i = 0; i < tweets.length; i++) {
+//                 console.log(tweets[i].text);
+//             }
+//         }
+//     }
 
-    T.get('search/tweets', params, getData);
-}
+//     T.get('search/tweets', params, getData);
+// }
 
 // getTweet();
 // setInterval(postTweet, 1000*100);
@@ -37,10 +37,14 @@ function getTweet() {
 
 // Post Tweets/Updates to Twitter
 function postTweet() {
-    var r = Math.floor(Math.random() * 100);
+
+    var date = new Date();
+    var presentTime = date.toLocaleTimeString();
+    var presentDate = date.toLocaleDateString();
+    console.log(presentTime, presentDate);
+
     var postParams = {
-        // status: 'This is just a test tweet from @MyCipherBot!'
-        status: 'Random Number: ' + r
+        status: 'Hello World! \nThis is just an another time tweet from @MyCipherBot. \n\nTime : '+ presentTime + '\nDate : '+ presentDate + ' on Heroku Server. \n\n I will update you in the next hour. \n Bye for now... \n\n #mytimebot #ciphercreations'
     }
 
     function postData(err, data, response) {
@@ -54,8 +58,8 @@ function postTweet() {
     T.post('statuses/update', postParams, postData);
 }
 
-// postTweet();
-// setInterval(postTweet, 1000*20);
+postTweet();
+setInterval(postTweet, 1000 * 60 * 60);
 
 
 

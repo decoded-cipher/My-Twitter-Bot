@@ -1,14 +1,14 @@
 // console.log('The Bot starts running...!');
 var Twit = require('twit')
 
-// var config = require('./config');
-var config = {
-    consumer_key: 'consumer_key',
-    consumer_secret: 'consumer_secret',
-    access_token: 'access_token',
-    access_token_secret: 'access_token_secret',
-}
-// console.log(config);
+var config = require('./config');
+// var config = {
+//     consumer_key: 'consumer_key',
+//     consumer_secret: 'consumer_secret',
+//     access_token: 'access_token',
+//     access_token_secret: 'access_token_secret',
+// }
+console.log(config);
 var T = new Twit(config);
 // console.log(T);
 

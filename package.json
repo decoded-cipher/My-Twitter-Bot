@@ -10,6 +10,7 @@
   "author": "Decoded_Cipher",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4",
     "twit": "^2.2.11"
   }

@@ -30,11 +30,14 @@ function getTweet() {
 }
 
 // getTweet();
+// setInterval(postTweet, 1000*100);
+
+
 
 
 // Post Tweets/Updates to Twitter
 function postTweet() {
-    var r = Math.floor(Math.random()*100);
+    var r = Math.floor(Math.random() * 100);
     var postParams = {
         // status: 'This is just a test tweet from @MyCipherBot!'
         status: 'Random Number: ' + r
@@ -51,6 +54,36 @@ function postTweet() {
     T.post('statuses/update', postParams, postData);
 }
 
-postTweet();
-setInterval(postTweet, 1000*20);
+// postTweet();
+// setInterval(postTweet, 1000*20);
 
+
+
+
+// Follow User Event Trigger on Twitter
+
+//     var stream = T.stream('user');
+//     stream.on('follow', followed);
+
+//     function followed(eventMsg) {
+//         console.log('Follow event happens...')
+//         var name = eventMsg.source.name;
+//         var screenName = eventMsg.source.screen_name;
+//         tweetIt('.@' + screenName + 'Thank you for following Me!');
+//     }
+
+// function tweetIt(txt) {
+//     var tweet = {
+//         status: txt
+//     }
+
+//     function tweeted(err, data, response) {
+//         if (err) {
+//             console.log('tweetIt() - Cannot post the tweet, something went Wrong!')
+//         } else {
+//             console.log('It worked!');
+//         }
+//     }
+
+//     T.post('statuses/update', tweet, tweeted);
+// }

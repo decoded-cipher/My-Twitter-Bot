@@ -8,7 +8,7 @@ var config = require('./config');
 //     access_token: 'access_token',
 //     access_token_secret: 'access_token_secret',
 // }
-console.log(config);
+// console.log(config);
 var T = new Twit(config);
 // console.log(T);
 

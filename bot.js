@@ -53,7 +53,7 @@ function postTweet() {
     console.log(presentTime, presentDate);
 
     var postParams = {
-        status: 'Hello World! \nThis is just an another time tweet from @MyCipherBot. \n\nTime : '+ presentTime + '\nDate : '+ presentDate + ' on Heroku Server. \n\n I will update you in the next hour. \n Bye for now... \n\n #mytimebot #ciphercreations'
+        status: 'Hello World! \nThis is just an another time tweet from @MyCipherBot. \n\nTime : '+ presentTime + '\nDate : '+ presentDate + ' on Local Server. \n\n I will update you in the next hour. \n Bye for now... \n\n #mytimebot #ciphercreations'
     }
 
     function postData(err, data, response) {
